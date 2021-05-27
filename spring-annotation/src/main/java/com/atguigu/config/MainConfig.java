@@ -34,13 +34,13 @@ public class MainConfig {
 	@Scope(value = "prototype") //配置多例，IOC容器启动时不创建多实例bean对象，获取对象时才创建
 	@Bean //给容器中注册一个bean,id默认=方法名,也可以@Bean("person")指定id,class=方法返回值类型.
 	public Person person() {
-	return new Person("Tom", 20);
+		return new Person("Tom", 20);
 	}
 
 	@Lazy //单实例bean默认在IOC容器启动时创建,懒加载表示容器启动不创建bean对象,而是在第一次获取使用bean时创建
 	@Bean
 	public Person p() {
-	return new Person("Jack", 18);
+		return new Person("Jack", 18);
 	}
 
 }
